@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js11_2</title>
+    <style>
+      #palette > div {
+        width: 150px;
+        height: 150px;
+        font-size: 0;
+        display: inline-block;
+      }
+      #palette > div > div {
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+      }
+      #simulate {
+        width: 900px;
+      }
+      #bg,
+      #tx {
+        margin-left: 10px;
+      }
+      td {
+        width: 20px;
+        height: 20px;
+      }
+      table {
+        display: inline-block;
+      }
+    </style>
+    <!-- <script src="jquery-3.5.1.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function () {
+        let color = ["00", "33", "66", "99", "cc", "ff"];
+
+        for (let k = 0; k < 6; k++) {
+          $("<table>").appendTo("#palette");
+          for (let j = 0; j < 6; j++) {
+            $("<tr>").appendTo("table:eq(" + k + ")");
+            for (let i = 0; i < 6; i++) {
+              $("<td>")
+                .css({ background: "#" + color[k] + color[j] + color[i] })
+                .appendTo("tr:eq(" + (k * 6 + j) + ")");
+            }
+          }
+        }
+
+        //①背景または文字のいずれかが選択されているかにより処理が変わる
+        // 背景、または文字が選択されたら、その選択がわかるようにする⇒相手は元に戻る
+        // カラーを押したら、現在選択されている文字または背景の色がそのカラーに変更される
+        // $("#palette td").click(function () {
+        //   $("#setColor").val($(this).css("background-color"));
+        // });
+        // $("#bg").click(function () {
+        //   $("#simulate").css("background-color", $("#setColor").val());
+        // });
+        // $("#tx").click(function () {
+        //   $("#simulate").css("color", $("#setColor").val());
+        // });
+
+        let choice = "color";
+        $("#config input").click(function () {
+          $("#config input").css({
+            backgroundColor: "rgb(220,210,220)",
+            color: "rgb(0,0,0,)",
+          });
+          $(this).css({
+            backgroundColor: "rgb(255,255,102)",
+            color: "rgb(0,0,0,)",
+          });
+          choice = $(this).attr("id");
+          console.log(choice);
+        });
+        $("#patette td").click(function () {
+          let color = $(this).css("color");
+          if (choice == "backgroundColor") {
+            $("#simulate").css({
+              backgroundColor: $(this).css("backgroundColor"),
+            });
+          } else {
+            $("#simulate").css({ color: $(this).css("color") });
+          }
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="palette"></div>
+    <div id="config">
+      <input id="setColor" type="text" size="30" /><input
+        type="button"
+        value="背景色"
+        id="backgroundColor"
+      /><input type="button" value="文字色" id="color" />
+    </div>
+    <div id="simulate">
+      <h1>Heading Level1</h1>
+      <h2>Heading Level2</h2>
+      <p>
+        Say hello World! Say hello World! Say hello World! Say hello World! Say
+        hello World! Say hello World! Say hello World! Say hello World! Say
+        hello World! Say hello World! Say hello World! Say hello World! Say
+        hello World! Say hello World! Say hello World! Say hello World! Say
+        hello World! Say hello World! Say hello World! Say hello World! Say
+        hello World! Say hello World! Say hello World! Say hello World! Say
+        hello World! Say hello World! Say hello World!
+      </p>
+      <h2>Heading Level2</h2>
+      <p>
+        Say hello World! Say hello World! Say hello World! Say hello World! Say
+        hello World! Say hello World! Say hello World! Say hello World! Say
+        hello World! Say hello World! Say hello World! Say hello World! Say
+        hello World! Say hello World! Say hello World! Say hello World! Say
+        hello World! Say hello World! Say hello World! Say hello World! Say
+        hello World! Say hello World! Say hello World! Say hello World! Say
+        hello World! Say hello World! Say hello World!
+      </p>
+    </div>
+  </body>
+</html>
