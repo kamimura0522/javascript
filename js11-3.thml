@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+ 
+    <title>11-3</title>
+    <style>
+      #big img {
+        width: 620px;
+      }
+      #small img {
+        width: 120px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(function(){
+   	 $("#small img")
+   	 .mouseover(function(){
+	   $("#big img").attr("src",$(this).attr("src"));    
+   	 })
+   	 .mouseout(function(){
+	   $("#big img").attr("src","images/img1.jpg");    
+   	 
+   	 });
+    
+    })
+ 
+    </script>
+  </head>
+  <body>
+    <div id="big">
+      <img src="images/img1.jpg"  />
+    </div>
+
+    <div id="small">
+    <img src="images/img1.jpg" >
+    <img src="images/img2.jpg" >
+    <img src="images/img3.jpg" >
+    <img src="images/img4.jpg" >
+    <img src="images/img5.jpg" >
+    </div>
+  </body>
+</html>
