@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11-5-oritatami</title>
+  </head>
+  <Style>
+    .hidden{
+      display: none;
+    }
+  </Style>
+  <body>
+    <ul>
+      <li class="submenu"><a href="#">Menu1</a></li>
+      <ul>
+        <li><a href="#">Menu1-1</a></li>
+        <li><a href="#">Menu1-2</a></li>
+        <li><a href="#">Menu1-3</a></li>
+      </ul>
+
+      <li class="submenu"><a href="#">Menu2</a></li>
+      <ul>
+        <li><a href="#">Menu2-1</a></li>
+        <li><a href="#">Menu2-2</a></li>
+        <li><a href="#">Menu2-3</a></li>
+      </ul>
+      </li>
+    </ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+$(".submenu").click(function(){
+$(this).next().toggleClass("hidden");
+});
+      });
+    </script>
+  </body>
+</html>
