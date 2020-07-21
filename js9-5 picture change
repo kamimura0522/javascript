@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9-5</title>
+  </head>
+  <body>
+    <img
+      src="kura.jpg"
+      onmouseover="this.src"
+      ="kura2.jpg"
+      onmouseout="this.src"
+      ="kura.jpg"
+      alt=""
+      id="picture"
+    />
+    <script>
+      let pic = document.getElementById("picture");
+      let img = new Array();
+      img[0] = new Image();
+      img[0].src = "kura.jpg";
+      img[1] = new Image();
+      img[1].src = "kura2.jpg";
+      let cnt = 0;
+      function changeImg() {
+        document.getElementById("picture").src = kura2.jpg;
+      }
+    </script>
+  </body>
+</html>
