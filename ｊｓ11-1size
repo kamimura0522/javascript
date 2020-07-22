@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>js11_1</title>
+<style>
+html{
+	width:900px;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:justify;
+	text-justify:distribute;
+}
+div{
+	text-align:right;
+	font-size:0;
+	margin-bottom:10px;
+}
+#sizeButton>img{
+	cursor:pointer;
+	margin-left:10px;
+}
+</style>
+	<script src="jquery-3.5.1.js"></script>
+	<script>
+	$(function(){
+	/*
+		$("#x-large").click(function(){
+			$("body").css({fontSize:"x-large"});
+		});
+		$("#medium").click(function(){
+			$("body").css({fontSize:"medium"});
+		});
+		$("#x-small").click(function(){
+			$("body").css({fontSize:"x-small"});
+		});
+		*/
+		
+		$("#sizeButton img").click(function(){
+			$("body").css({fontSize:$(this).attr("id")});
+		});
+	});
+	</script>
+</head>
+<body>
+	<div id="sizeButton">
+		<img src="images/big.gif" id="x-large">
+		<img src="images/middle.gif" id="medium">
+		<img src="images/small.gif" id="x-small">
+	</div>
+	<h1>見出し１</h1>
+	<h2>見出し２</h2>
+	<h3>見出し３</h3>
+	<p>本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文</p>
+</body>
+</html>
